@@ -9,3 +9,6 @@
 # If the selection matches a supported operation, execute the operation.
 # If the selection does not match a support operation, display an error message.
 # When the operation is complete, redisplay the menu.
+
+echo "Hello! Welcome to my calculator. You can do the 4 basic arithnmetic operations of adding, subtracting, 
+multiplying and dividing. Please type out the operation you would like to use:"
