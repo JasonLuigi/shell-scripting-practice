@@ -25,6 +25,9 @@ echo "4. Division"
 echo "5. Exit"
 read response
 
-
+echo "Please enter first number:"
+read n1
+echo "Please enter second number:"
+read n2
 
 
