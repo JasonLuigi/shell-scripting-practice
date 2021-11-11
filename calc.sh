@@ -12,13 +12,19 @@
 
 ch=0
 
+#welcome message
+
 echo "Hello! Welcome to my calculator. You can do the 4 basic arithnmetic operations of adding, subtracting, 
 multiplying and dividing."
 
 echo
 
+#while loop to keep user in the calculator unless exited
+
 while [ true ] 
 do
+
+  # Read user input
 
   echo "Please enter the number for the operation you want to use:"
   echo "1. Addition"
@@ -28,20 +34,26 @@ do
   echo "5. Exit"
   read ch
 
+  # check if input is one of the allowed selections
+
 if  [ $ch -eq "1" ] || [ $ch -eq "2" ] || [ $ch -eq "3" ] || [ $ch -eq "4" ] || [ $ch -eq "5" ] 
 then 
 
+
+  # If option is 5, exit loop
   if [ $ch -eq "5" ]
   then
     break
   fi
 
-  echo "Please enter your first number:"
-  read n1
-  echo "Please enter your second number:"
-  read n2
+  # User input
+  
+  read -p "Please enter your first number:" n1;
+
+  read -p "Please enter your second number:" n2;
 
 
+  # Creating a variable called res which takes the 2 earlier variables and solves an equation using the numbers given.
   let res="$n1 + $n2"
     case $ch in
       1) let res="$n1 + $n2" ;;
@@ -52,7 +64,7 @@ then
 
 
 
-
+  # Attempted code, came up with an error that I couldn't solve. Kept for later checkup and possible use.
   # case $ch in
   #   1) res=`echo ("$n1" + "$n2") ` ;;
   #   2) res=`echo ($n1 - $n2) ` ;;
@@ -60,9 +72,12 @@ then
   #   4) res=`echo ($n1 / $n2) ` ;;
   # esac
 
+  # Show the result
 
   echo "The result is $res"
 
+
+# Any symbol that is not 1-5 will show this error and reset the loop.
 else
   echo
   echo "You did not enter a known option, please enter 1-4 or 5 to exit:"
